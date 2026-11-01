@@ -18,7 +18,7 @@
 
   - name: print the output
     degug:
-      msg: {{ java25 }}
+      msg: "{{ java25 }}"
 
   - name: make java25 as default
     command: alternatives --set java {{ java25.stdout }}
