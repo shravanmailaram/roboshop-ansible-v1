@@ -7,7 +7,7 @@
     domain_name: dopsaws.online
     ami_id: ami-0055977a6e828a4f4
   tasks:
-  - name: creaet ec2 instance
+  - name: create ec2 instance
     amazon.aws.ec2_instance:
       name: "roboshop-{{ item }}"
       image_id: "{{ ami_id }}"
@@ -21,6 +21,19 @@
     register: ec2_output
 
 
-  - name: print ec2 creation output
-    debug:
-      msg: "{{ ec2_output }}"
+  # - name: print ec2 creation output
+  #   debug:
+  #     msg: "{{ ec2_output }}"
+
+  - name: create R53 record
+    amazon.aws.route53:
+      state: present
+      zone: "{{ domain_name }}"
+      record: "{{ item.item }}.{{ domain_name }}" # mongodb.dopsaws.online
+      type: A
+      ttl: 1
+      value: "{{ item.instance[0].private_ip_address }}"
+      overwrite: true
+    loop: "{{ ec2_output.results }}"
+    when: action == "create"
+
