@@ -2,3 +2,10 @@ ansible_user: ec2-user
 ansible_password: DevOps321
 mongodb_host: mongodb.dopsaws.online
 redis_host: redis.dopsaws.online
+mysql_host: mysql.dopsaws.online
+catalogue_host: catalogue.dopsaws.online
+user_host: user.dopsaws.online
+cart_host: cart.dopsaws.online
+shipping_host: shipping.dopsaws.online
+payment_host: payment.dopsaws.online
+
