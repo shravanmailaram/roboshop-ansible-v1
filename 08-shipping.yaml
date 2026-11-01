@@ -70,4 +70,4 @@
       chdir: /app
     environment:
       JAVA_HOME: "{{ java25.stdout | dirname | dirname }}"
-      MAVEN_OPTS="-Djdk.tls.namedGroups=x25519,secp256r1,secp384r1"
+      MAVEN_OPTS: "-Djdk.tls.namedGroups=x25519,secp256r1,secp384r1"
