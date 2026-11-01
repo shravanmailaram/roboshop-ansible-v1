@@ -17,7 +17,7 @@
     register: java25
 
   - name: print the output
-    degug:
+    debug:
       msg: "{{ java25 }}"
 
   - name: make java25 as default
