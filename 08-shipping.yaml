@@ -83,4 +83,15 @@
     #   JAVA_HOME: "{{ java25.stdout | dirname | dirname }}"
     #   MAVEN_OPTS: "-Djdk.tls.namedGroups=x25519,secp256r1,secp384r1"
 
-  
+  - name: move shipping jar file
+    command: mv target/shipping-1.0.jar shipping.jar
+    args:
+      chdir: /app
+
+  - name: check cities data exists or not
+    command: mysql -h "{{ mysql_host }}" -uroot -p{{ mysql_root_password }} -N -B -e "SELECT COUNT(*) FROM cities.cities;"
+    register: cities_count
+
+  - name: print cities count
+    debug:
+      msg: "{{ cities_count.stdout }}"

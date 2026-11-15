@@ -8,4 +8,4 @@ user_host: user.dopsaws.online
 cart_host: cart.dopsaws.online
 shipping_host: shipping.dopsaws.online
 payment_host: payment.dopsaws.online
-
+mysql_root_password: RoboShop@1
