@@ -84,7 +84,7 @@
     #   MAVEN_OPTS: "-Djdk.tls.namedGroups=x25519,secp256r1,secp384r1"
 
   - name: move shipping jar file
-    command: mv target/shipping-1.0.jar shipping.jar
+    command: mv target/shipping.jar shipping.jar
     args:
       chdir: /app
 
