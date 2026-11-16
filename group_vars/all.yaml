@@ -2,6 +2,7 @@ ansible_user: ec2-user
 ansible_password: DevOps321
 mongodb_host: mongodb.dopsaws.online
 redis_host: redis.dopsaws.online
+rabbitmq_host: rabbitmq.dopsaws.online
 mysql_host: mysql.dopsaws.online
 catalogue_host: catalogue.dopsaws.online
 user_host: user.dopsaws.online
@@ -11,3 +12,5 @@ payment_host: payment.dopsaws.online
 mysql_root_password: RoboShop@1
 shipping_db_user: shipping
 shipping_db_password: RoboShop@1
+rabbitmq_user: roboshop
+rabbitmq_password: roboshop123
