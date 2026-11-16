@@ -46,7 +46,7 @@
   - name: install dependencies
     ansible.builtin.pip:
       requirements: /app/requirements.txt
-      virtualenv: /my_app/venv
+      virtualenv: /app/venv
       virtualenv_command: python3.14 -m venv
 
   - name: copy payment service
