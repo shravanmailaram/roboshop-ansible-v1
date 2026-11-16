@@ -69,7 +69,7 @@
       ttl: 1
       type: A
     loop: "{{ instances }}"
-    when: action == "delete" and item.item == "frontend"
+    when: action == "delete"
 
   - name: delte ec2 instances
     amazon.aws.ec2_instance:
