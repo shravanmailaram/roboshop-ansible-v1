@@ -5,7 +5,7 @@
   - name: enable maven 3.9
     command: dnf module enable maven:3.9 -y
      
-  - name: install maven and java25
+  - name: install mysql client,maven and java25
     dnf:
       name:
       - maven
@@ -104,7 +104,7 @@
 
   - name: load cities data into mysql
     shell: mysql -h "{{ mysql_host }}" -uroot -p{{ mysql_root_password }} < /app/db/master-data.sql
-    when: cities_count.rc !=0 or cities_count.stdout | int == "0"
+    when: cities_count.rc != 0 or cities_count.stdout | int == 0
     tags:
       - mysql
 
